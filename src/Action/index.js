@@ -1,19 +1,17 @@
-import {
-  FETCH_USER_REQUEST,
-  FETCH_USER_SUCCESS,
-  FETCH_USER_FAILURE,
-} from './actionTypes';
+import axios from 'axios';
+import { fetchUserRequest, fetchUserSuccess, fetchUserFailure } from './fetchActions';
 
-export const fetchUserRequest = () => ({
-  type: FETCH_USER_REQUEST,
-});
+const fetchRecipe = () => dispatch => {
+  dispatch(fetchUserRequest);
+  axios.get('')
+    .then(response => {
+      const recipes = response.data;
+      dispatch(fetchUserSuccess(recipes));
+    })
+    .catch(error => {
+      const errorMsg = error.data;
+      dispatch(fetchUserFailure(errorMsg));
+    });
+};
 
-export const fetchUserSuccess = data => ({
-  type: FETCH_USER_SUCCESS,
-  payload: data,
-});
-
-export const fetchUserFailure = error => ({
-  type: FETCH_USER_FAILURE,
-  payload: error,
-});
+export default fetchRecipe;
