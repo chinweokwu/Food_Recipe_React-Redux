@@ -1,17 +1,18 @@
+/* eslint-disable no-console */
 import axios from 'axios';
 import { fetchUserRequest, fetchUserSuccess, fetchUserFailure } from './fetchActions';
 
-const fetchRecipe = () => dispatch => {
+const fetchRecipes = () => dispatch => {
   dispatch(fetchUserRequest);
-  axios.get('')
+  axios.get('https://serene-gorge-49314.herokuapp.com/https://recipesapi.herokuapp.com/api/search?q=chicken')
     .then(response => {
-      const recipes = response.data;
-      dispatch(fetchUserSuccess(recipes));
+      const menu = response.data.recipes;
+      dispatch(fetchUserSuccess(menu));
     })
     .catch(error => {
-      const errorMsg = error.data;
+      const errorMsg = error.messages;
       dispatch(fetchUserFailure(errorMsg));
     });
 };
 
-export default fetchRecipe;
+export default fetchRecipes;
