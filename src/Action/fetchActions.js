@@ -1,25 +1,41 @@
+import axios from 'axios';
 import {
   FETCH_USER_REQUEST,
   FETCH_USER_SUCCESS,
   FETCH_USER_FAILURE,
-  CHANGE_FILTER,
+  SEARCH_RECIPES,
 } from './actionTypes';
 
-export const fetchUserRequest = () => ({
+const fetchUserRequest = () => ({
   type: FETCH_USER_REQUEST,
 });
 
-export const fetchUserSuccess = recipes => ({
+const fetchUserSuccess = recipes => ({
   type: FETCH_USER_SUCCESS,
   payload: recipes,
 });
 
-export const fetchUserFailure = error => ({
+const fetchUserFailure = error => ({
   type: FETCH_USER_FAILURE,
   payload: error,
 });
 
-export const changeFilters = data => ({
-  type: CHANGE_FILTER,
-  payload: data,
-});
+export const searchRecipes = text => dispatch => {
+  dispatch({
+    type: SEARCH_RECIPES,
+    payload: text,
+  });
+};
+
+export const fetchRecipes = text => dispatch => {
+  dispatch(fetchUserRequest);
+  axios.get(`https://serene-gorge-49314.herokuapp.com/https://recipesapi.herokuapp.com/api/search?q=${text}`)
+    .then(response => {
+      const menu = response.data.recipes;
+      dispatch(fetchUserSuccess(menu));
+    })
+    .catch(error => {
+      const errorMsg = error.messages;
+      dispatch(fetchUserFailure(errorMsg));
+    });
+};

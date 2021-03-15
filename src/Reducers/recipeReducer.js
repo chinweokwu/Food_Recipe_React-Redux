@@ -1,7 +1,10 @@
-import { FETCH_USER_REQUEST, FETCH_USER_SUCCESS, FETCH_USER_FAILURE } from '../Action/actionTypes';
+import {
+  FETCH_USER_REQUEST, FETCH_USER_SUCCESS, FETCH_USER_FAILURE, SEARCH_RECIPES,
+} from '../Action/actionTypes';
 
 const initialState = {
   loading: false,
+  text: '',
   recipes: [],
   error: '',
 };
@@ -24,6 +27,11 @@ const recipeReducer = (state = initialState, action) => {
         loading: false,
         recipes: [],
         error: action.payload,
+      };
+    case SEARCH_RECIPES:
+      return {
+        ...state,
+        text: action.payload,
       };
     default: return state;
   }
