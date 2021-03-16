@@ -22,32 +22,31 @@ class Menu extends Component {
     ) : this.props.error ? (
       <h2>{this.props.recipeData.error}</h2>
     ) : (this.props.recipeData.map(recipe => (
-      <div className="cards-list" key={recipe._id}>
-        <div className="card">
-          <div className="card_image">
-            <img src={recipe.image_url} alt={recipe.title} />
-          </div>
-          <div className="card_title title-white">
-            <p>{recipe.title}</p>
-          </div>
+      <div className="card" key={recipe._id}>
+        <div className="card_image">
+          <img src={recipe.image_url} alt={recipe.title} />
+        </div>
+        <div className="card_title title-white">
+          <p>{recipe.title.length < 20 ? `${recipe.title}` : `${recipe.title.substring(0, 25)}...`}</p>
+          <button type="submit">View Details</button>
         </div>
       </div>
+
     )));
 
     return (
       <div>
-        <form onSubmit={this.onSubmit}>
+        <form className="form-tag" onSubmit={this.onSubmit}>
           <input
             type="text"
             name="searchQuery"
+            className="input-tag"
             placeholder="Search Meal..."
             onChange={this.onChange}
           />
-          <br />
-          <br />
-          <button type="submit">Search</button>
+          <button type="submit" className="search-btn">Search</button>
         </form>
-        <div>
+        <div className="main">
           {searchRecipes}
         </div>
       </div>
