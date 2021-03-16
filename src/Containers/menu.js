@@ -4,6 +4,7 @@
 /* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { fetchRecipes, searchRecipes } from '../Action/fetchActions';
 
 class Menu extends Component {
@@ -28,7 +29,9 @@ class Menu extends Component {
         </div>
         <div className="card_title title-white">
           <p>{recipe.title.length < 20 ? `${recipe.title}` : `${recipe.title.substring(0, 25)}...`}</p>
-          <button type="submit">View Details</button>
+          <button type="submit">
+            <Link to={{ pathname: `/recipe/${recipe.recipe_id}` }}>View Details</Link>
+          </button>
         </div>
       </div>
 
