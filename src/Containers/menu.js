@@ -18,11 +18,7 @@ class Menu extends Component {
   }
 
   render() {
-    const searchRecipes = this.props.loading ? (
-      <h2>Loading...</h2>
-    ) : this.props.error ? (
-      <h2>{this.props.recipeData.error}</h2>
-    ) : (this.props.recipeData.map(recipe => (
+    const searchRecipes = this.props.recipeData.map(recipe => (
       <div className="card" key={recipe._id}>
         <div className="card_image">
           <img src={recipe.image_url} alt={recipe.title} />
@@ -30,12 +26,17 @@ class Menu extends Component {
         <div className="card_title title-white">
           <p>{recipe.title.length < 20 ? `${recipe.title}` : `${recipe.title.substring(0, 25)}...`}</p>
           <button type="submit">
-            <Link to={{ pathname: `/recipe/${recipe.recipe_id}` }}>View Details</Link>
+            <Link to={{
+              pathname: `/recipe/${recipe.recipe_id}`,
+              state: { food: recipe.title },
+            }}
+            >
+              View Details
+            </Link>
           </button>
         </div>
       </div>
-
-    )));
+    ));
 
     return (
       <div>
@@ -50,7 +51,11 @@ class Menu extends Component {
           <button type="submit" className="search-btn">Search</button>
         </form>
         <div className="main">
-          {searchRecipes}
+          {this.props.recipeData.loading ? (
+            <h2 className="loading">Loading...</h2>
+          ) : this.props.recipeData.error ? (
+            <h2>{this.props.error}</h2>
+          ) : (searchRecipes)}
         </div>
       </div>
     );
@@ -60,8 +65,6 @@ class Menu extends Component {
 const mapStateToProps = state => ({
   recipeData: state.results.recipes,
   text: state.results.text,
-  loading: state.results.loading,
-  error: state.results.error,
 });
 
 export default connect(mapStateToProps, { searchRecipes, fetchRecipes })(Menu);
