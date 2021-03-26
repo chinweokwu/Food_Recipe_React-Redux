@@ -86,7 +86,38 @@ margin: 0 auto;
 .title-white {
   color: white;
 }
-
+.wrapper {
+  padding-top: 25px;
+}
+.wrapper-title {
+  width: 500px;
+  height: 200px;
+  background-color: #E2E2E2;
+  margin: auto;
+}
+.wrapper-title p {
+  margin: 0px;
+  padding-top: 7px;
+  padding-left: 30px;
+  font-weight: 300;
+}
+.wrapper-buttton{
+  width: 500px;
+  margin-top: 25px;
+  background-color: #EF3E36;
+  border: none;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: center;
+  padding: 10px;
+  transition: 250ms;
+}
+.wrapper-buttton:hover {
+  background: #17BEBB;
+  transition: 250ms;
+  border: none;
+}
 @media all and (max-width: 500px) {
   .main {
     flex-direction: column;
