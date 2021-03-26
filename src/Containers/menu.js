@@ -61,8 +61,8 @@ Menu.propTypes = {
   fetchRecipes: PropTypes.func.isRequired,
   recipeData: PropTypes.arrayOf(PropTypes.object).isRequired,
   text: PropTypes.string.isRequired,
-
 };
+
 const mapStateToProps = state => ({
   recipeData: state.results.recipes,
   text: state.results.text,
