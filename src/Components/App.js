@@ -1,11 +1,10 @@
 import React from 'react';
 import Menu from '../Containers/menu';
+import Header from './header/index';
 
 const App = () => (
   <div className="App">
-    <header className="App-header">
-      <h1 className="App-title">Recipe Search App</h1>
-    </header>
+    <Header />
     <Menu />
   </div>
 );
