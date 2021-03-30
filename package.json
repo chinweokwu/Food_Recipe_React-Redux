@@ -7,6 +7,7 @@
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
+    "connected-react-router": "^6.9.1",
     "expect": "^26.6.2",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
@@ -44,6 +45,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
+    "check-prop-types": "^1.1.2",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
     "enzyme-to-json": "^3.6.1",
