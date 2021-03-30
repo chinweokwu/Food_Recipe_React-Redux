@@ -1,9 +1,9 @@
 /* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { fetchRecipes, searchRecipes } from '../Action/fetchActions';
+import FoodList from '../Components/foodlist';
 
 class Menu extends Component {
   onChange = e => {
@@ -16,26 +16,6 @@ class Menu extends Component {
   }
 
   render() {
-    const searchRecipes = this.props.recipeData.map(recipe => (
-      <div className="card" key={recipe.recipe_id}>
-        <div className="card_image">
-          <img src={recipe.image_url} alt={recipe.title} />
-        </div>
-        <div className="card_title title-white">
-          <p>{recipe.title.length < 20 ? `${recipe.title}` : `${recipe.title.substring(0, 25)}...`}</p>
-          <button type="submit">
-            <Link to={{
-              pathname: `/recipe/${recipe.recipe_id}`,
-              state: { food: recipe.title },
-            }}
-            >
-              View Details
-            </Link>
-          </button>
-        </div>
-      </div>
-    ));
-
     return (
       <div>
         <form className="form-tag" onSubmit={this.onSubmit}>
@@ -49,7 +29,9 @@ class Menu extends Component {
           <button type="submit" className="search-btn">Search</button>
         </form>
         <div className="main">
-          { searchRecipes }
+          {this.props.recipeData.map(recipe => (
+            <FoodList key={recipe.recipe_id} recipe={recipe} />
+          ))}
         </div>
       </div>
     );

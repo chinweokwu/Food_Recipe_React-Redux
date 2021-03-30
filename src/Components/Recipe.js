@@ -20,6 +20,7 @@ const Recipe = ({ location }) => {
               && (
               <div className="wrapper">
                 <div
+                  className="wrapper-image"
                   style={{
                     backgroundImage: `url(${backgroundUrl})`,
                     imageRendering: 'auto',
