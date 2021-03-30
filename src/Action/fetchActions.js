@@ -6,7 +6,7 @@ import {
   SEARCH_RECIPES,
 } from './actionTypes';
 
-const fetchUserRequest = () => ({
+export const fetchUserRequest = () => ({
   type: FETCH_USER_REQUEST,
 });
 
