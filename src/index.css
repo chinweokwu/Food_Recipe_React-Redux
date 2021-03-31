@@ -18,10 +18,10 @@
 }
 
 .main {
-display: flex;
-flex-wrap: wrap;
-width: 100%;
-margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .form-tag {
@@ -49,7 +49,7 @@ margin: 0 auto;
   width: 250px;
   height: 250px;
   border-radius: 40px;
-  box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25), -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
   cursor: pointer;
   transition: 0.4s;
 }
@@ -86,21 +86,25 @@ margin: 0 auto;
 .title-white {
   color: white;
 }
+
 .wrapper {
   padding-top: 25px;
 }
+
 .wrapper-title {
   width: 500px;
   height: 200px;
   background-color: #E2E2E2;
   margin: auto;
 }
+
 .wrapper-title p {
   margin: 0px;
   padding-top: 7px;
   padding-left: 30px;
   font-weight: 300;
 }
+
 .wrapper-buttton{
   width: 500px;
   height: 50px;
@@ -114,14 +118,15 @@ margin: 0 auto;
   padding: 10px;
   transition: 250ms;
 }
+
 .wrapper-buttton:hover {
   background: #17BEBB;
   transition: 250ms;
   border: none;
 }
+
 @media all and (max-width: 500px) {
   .main {
     flex-direction: column;
   }
 }
-
