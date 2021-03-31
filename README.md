@@ -42,20 +42,19 @@ You will also see any lint errors in the console.
 
 - To see the live site check here
 
-[Live Demo Link]()
+[Live Demo Link](https://musing-torvalds-1f5773.netlify.app/)
 
-- React virtual Dom presentation video
+- A description of the project and a demo of the project features 
 
-[Live Demo Link]()
-
-
-- Redux presentation video.
-
-[Live Demo Link]()
+[Live Demo Link](https://www.loom.com/share/2edf55fbadce438880fefb6765d39f7e)
 
 - Programming Presentation video.
 
-[Live Demo Link]()
+[Live Demo Link](https://www.loom.com/share/95363ddb707340d8870185e621494707)
+
+- what excited you the most about software development during this course
+
+[Live Demo Link](https://www.loom.com/share/dec3709e37cc4fa7a18a862ae973361f)
 
 ## Author
 
