@@ -2,6 +2,9 @@
 
 > The aim of this project is to create an application that shows the recipes of all foods around the world. The project is built in react and redux. The data is being processed from an API end point.
 
+> The project conatins a search input at the header section of the main page. The search input filters the meals. To be able to search for meals you can type in words like
+- Meat, fish, shrimps, beef, chicken, e.t.c. these single text are attached to the end of the api (`https://serene-gorge-49314.herokuapp.com/https://recipesapi.herokuapp.com/api/search?q=${text}`) as text and placed on the browser.
+
 
 ![screenshot](food.png)
 
