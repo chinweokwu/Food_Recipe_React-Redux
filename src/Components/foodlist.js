@@ -1,9 +1,11 @@
+/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const FoodList = ({ recipe }) => (
   <div className="card" key={recipe.recipe_id}>
+    {console.log(typeof (recipe))}
     <div className="card_image">
       <img src={recipe.image_url} alt={recipe.title} />
     </div>
@@ -21,8 +23,11 @@ const FoodList = ({ recipe }) => (
     </div>
   </div>
 );
-FoodList.propTypes = {
-  recipe: PropTypes.arrayOf(PropTypes.object).isRequired,
+FoodList.defaultProps = {
+  recipe: {},
 };
 
+FoodList.propTypes = {
+  recipe: PropTypes.object,
+};
 export default FoodList;

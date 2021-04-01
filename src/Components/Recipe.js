@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
@@ -5,6 +6,7 @@ import PropTypes from 'prop-types';
 
 const Recipe = ({ location }) => {
   const [activeMenu, setActiveMenu] = useState([]);
+
   useEffect(() => {
     const title = location.state.food;
     axios.get(`https://serene-gorge-49314.herokuapp.com/https://recipesapi.herokuapp.com/api/search?q=${title}`)
@@ -47,8 +49,12 @@ const Recipe = ({ location }) => {
   );
 };
 
+Recipe.defaultProps = {
+  location: {},
+};
+
 Recipe.propTypes = {
-  location: PropTypes.string.isRequired,
+  location: PropTypes.object,
 };
 
 export default Recipe;

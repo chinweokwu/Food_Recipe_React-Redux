@@ -38,11 +38,15 @@ class Menu extends Component {
   }
 }
 
+Menu.defaultProps = {
+  text: null,
+};
+
 Menu.propTypes = {
   searchRecipes: PropTypes.func.isRequired,
   fetchRecipes: PropTypes.func.isRequired,
   recipeData: PropTypes.arrayOf(PropTypes.object).isRequired,
-  text: PropTypes.string.isRequired,
+  text: PropTypes.string,
 };
 
 const mapStateToProps = state => ({
