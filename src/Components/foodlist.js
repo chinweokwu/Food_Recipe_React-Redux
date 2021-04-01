@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 const FoodList = ({ recipe }) => (
   <div className="card" key={recipe.recipe_id}>
-    {console.log(typeof (recipe))}
     <div className="card_image">
       <img src={recipe.image_url} alt={recipe.title} />
     </div>

@@ -39,7 +39,7 @@ class Menu extends Component {
 }
 
 Menu.defaultProps = {
-  text: null,
+  text: 'all',
 };
 
 Menu.propTypes = {
