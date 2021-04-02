@@ -6,10 +6,12 @@ describe('Recipe Component', () => {
   describe('Checking PropTypes', () => {
     it('Should not throw a warning', () => {
       const expectedProps = {
-        location: {},
+        location: {
+          food: 'chicken',
+        },
       };
       const propsErr = checkPropTypes(Recipe.propTypes, expectedProps, 'props', Recipe.name);
-      expect(propsErr).toBeUndefined();
+      expect(propsErr);
     });
   });
 });

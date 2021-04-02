@@ -1,42 +1,42 @@
 /* eslint-disable react/destructuring-assignment */
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { fetchRecipes, searchRecipes } from '../Action/fetchActions';
 import FoodList from '../Components/foodlist';
 
-class Menu extends Component {
-  onChange = e => {
-    this.props.searchRecipes(e.target.value);
-  }
+const Menu = ({
+  fetchRecipes, searchRecipes, text, recipeData,
+}) => {
+  const onChange = e => {
+    searchRecipes(e.target.value);
+  };
 
-  onSubmit = e => {
+  const onSubmit = e => {
     e.preventDefault();
-    this.props.fetchRecipes(this.props.text);
-  }
+    fetchRecipes(text);
+  };
 
-  render() {
-    return (
-      <div>
-        <form className="form-tag" onSubmit={this.onSubmit}>
-          <input
-            type="text"
-            name="searchQuery"
-            className="input-tag"
-            placeholder="Search Meal..."
-            onChange={this.onChange}
-          />
-          <button type="submit" className="search-btn">Search</button>
-        </form>
-        <div className="main">
-          {this.props.recipeData.map(recipe => (
-            <FoodList key={recipe.recipe_id} recipe={recipe} />
-          ))}
-        </div>
+  return (
+    <div>
+      <form className="form-tag" onSubmit={onSubmit}>
+        <input
+          type="text"
+          name="searchQuery"
+          className="input-tag"
+          placeholder="Search Meal..."
+          onChange={onChange}
+        />
+        <button type="submit" className="search-btn">Search</button>
+      </form>
+      <div className="main">
+        {recipeData.map(recipe => (
+          <FoodList key={recipe.recipe_id} recipe={recipe} />
+        ))}
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 Menu.defaultProps = {
   text: 'all',

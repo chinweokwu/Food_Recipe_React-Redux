@@ -1,4 +1,3 @@
-/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
@@ -27,6 +26,6 @@ FoodList.defaultProps = {
 };
 
 FoodList.propTypes = {
-  recipe: PropTypes.object,
+  recipe: PropTypes.shape(PropTypes.object),
 };
 export default FoodList;
