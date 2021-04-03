@@ -1,4 +1,3 @@
-/* eslint-disable react/forbid-foreign-prop-types */
 import checkPropTypes from 'check-prop-types';
 import Recipe from './Recipe';
 
@@ -10,7 +9,7 @@ describe('Recipe Component', () => {
           food: 'chicken',
         },
       };
-      const propsErr = checkPropTypes(Recipe.propTypes, expectedProps, 'props', Recipe.name);
+      const propsErr = checkPropTypes(Recipe.PropTypes, expectedProps, 'props', Recipe.name);
       expect(propsErr);
     });
   });
