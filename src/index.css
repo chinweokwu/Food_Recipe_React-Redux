@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App-header {
+  background-color: rgba(25, 33, 107, 0.74);
+  height: 100px;
+}
+
+.App-title {
+  text-align: center;
+  vertical-align: middle;
+  color: azure;
+  padding-top: 20px;
+  font-size: 50px;
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.form-tag {
+  text-align: center;
+  margin: 20px;
+}
+
+.input-tag {
+  width: 300px;
+  height: 40px;
+}
+
+.loading {
+  font-size: 100px;
+  color: black;
+}
+
+.search-btn {
+  width: 100px;
+  height: 40px;
+}
+
+.card {
+  margin: 30px;
+  width: 250px;
+  height: 250px;
+  border-radius: 40px;
+  box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25), -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.card .card_image {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+}
+
+.card .card_image img {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+  object-fit: cover;
+}
+
+.card .card_title {
+  text-align: center;
+  border-radius: 0 0 40px 30px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: -70px;
+  height: 40px;
+}
+
+.card:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow:
+    5px 5px 30px 15px rgba(0, 0, 0, 0.25),
+    -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
+}
+
+.title-white {
+  color: white;
+}
+
+.wrapper {
+  padding-top: 25px;
+}
+
+.wrapper-title {
+  width: 500px;
+  height: 200px;
+  background-color: #e2e2e2;
+  margin: auto;
+}
+
+.wrapper-title p {
+  margin: 0;
+  padding-top: 7px;
+  padding-left: 30px;
+  font-weight: 300;
+}
+
+.wrapper-buttton {
+  width: 500px;
+  height: 50px;
+  margin-top: 25px;
+  background-color: #ef3e36;
+  border: none;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: center;
+  padding: 10px;
+  transition: 250ms;
+}
+
+.wrapper-buttton:hover {
+  background: #17bebb;
+  transition: 250ms;
+  border: none;
+}
+
+@media all and (max-width: 500px) {
+  .main {
+    flex-direction: column;
+  }
+}
